@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+  
+        body {
+          font-family: "Poppins", sans-serif;
+          background: linear-gradient(135deg, #283c86, #45a247);
+          color: #fff;
+          overflow-x: hidden;
+        }
+  
+        header {
+          background: #121212;
+          color: #fff;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 10%;
+          flex-wrap: wrap;
+        }
+  
+        header .logo {
+          font-size: 1.8rem;
+          font-weight: 600;
+          color: #f72c50;
+        }
+  
+        header nav a {
+          text-decoration: none;
+          color: #fff;
+          margin: 0 15px;
+          font-size: 1rem;
+          position: relative;
+          transition: color 0.3s ease;
+          font-weight: 500;
+        }
+  
+        header nav a:hover {
+          color: transparent;
+          background: linear-gradient(45deg, #c01818, #72d6c9, #8fa1ff, #ff758c);
+          -webkit-background-clip: text;
+          background-clip: text;
+          transition: 0.4s;
+        }
+  
+        header nav a::before {
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(90deg, #ff7eb3, #72d6c9);
+          transition: width 0.3s ease;
+        }
+  
+        header nav a:hover::before {
+          width: 100%;
+        }
+  
+        .about-section {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 50px 10%;
+          flex-wrap: wrap;
+        }
+  
+        .about-text {
+          flex: 1;
+          max-width: 600px;
+          animation: fadeInLeft 1.5s ease;
+        }
+  
+        .about-text h1 {
+          font-size: 3rem;
+          margin-bottom: 20px;
+        }
+  
+        .about-text p {
+          font-size: 1.1rem;
+          line-height: 1.6;
+        }
+  
+        .about-image {
+          flex: 1;
+          max-width: 450px;
+          animation: fadeInRight 2s ease-in-out;
+        }
+  
+        .about-image img {
+          width: 100%;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+          border: 2.5px dashed transparent;
+          border-image: linear-gradient(
+            45deg,
+            #ff6f61,
+            #ffcc00,
+            #6dd0ff,
+            #a566ff,
+            #ff6f61
+          );
+          border-image-slice: 1;
+          animation: animate-border 1.5s linear infinite;
+        }
+  
+        @keyframes animate-border {
+          0% { border-image-source: linear-gradient(0deg, #ff6f61, #ffcc00, #6dd0ff, #a566ff, #ff6f61); }
+          25% { border-image-source: linear-gradient(90deg, #ffcc00, #6dd0ff, #a566ff, #ff6f61, #ffcc00); }
+          50% { border-image-source: linear-gradient(180deg, #6dd0ff, #a566ff, #ff6f61, #ffcc00, #6dd0ff); }
+          75% { border-image-source: linear-gradient(270deg, #a566ff, #ff6f61, #ffcc00, #6dd0ff, #a566ff); }
+          100% { border-image-source: linear-gradient(360deg, #ff6f61, #ffcc00, #6dd0ff, #a566ff, #ff6f61); }
+        }
+  
+        footer {
+          position:sticky;
+          bottom: 0;
+          width: 100%;
+          text-align: center;
+          padding: 20px;
+          background: #121212;
+          color: #fff;
+          font-size: 1rem;
+        }
+  
+        @keyframes fadeInLeft {
+          0% { opacity: 0; transform: translateX(-50px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+  
+        @keyframes fadeInRight {
+          0% { opacity: 0; transform: translateX(50px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+  
+        @keyframes fadeInUp {
+          0% { opacity: 0; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+  
+        .container {
+          max-width: 1100px;
+          margin: 50px auto;
+          text-align: center;
+          animation: fadeInUp 1s ease-in-out;
+        }
+  
+        .education {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+        }
+  
+        .card {
+          background: #fff;
+          color: #333;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          width: 300px;
+          transition: transform 0.3s ease-in-out;
+          opacity: 0;
+          animation: fadeInUp 1s ease-in-out forwards;
+        }
+  
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+  
+        .card:hover {
+          transform: translateY(-10px);
+        }
+  
+        .icon {
+          background: #ff6f61;
+          width: 80px;
+          height: 80px;
+          line-height: 80px;
+          border-radius: 50%;
+          margin: auto;
+          font-size: 2rem;
+          color: white;
+          animation: bounce 2s infinite;
+        }
+  
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+  
+        @media (max-width: 768px) {
+          header {
+              flex-direction: column;
+              align-items: center;
+          }
+  
+          .menu-toggle {
+              display: block;
+          }
+  
+          nav {
+              flex-direction: column;
+              display: none;
+              text-align: center;
+          }
+  
+          nav.active {
+              display: flex;
+          }
+  
+          .about-section {
+              flex-direction: column;
+              text-align: center;
+          }
+  
+          .education {
+              flex-direction: column;
+              align-items: center;
+          }
+        }
+      </style>
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Aryan Kushwaha</div>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./service.html">Services</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <section class="about-section">
+      <div class="about-text">
+        <h1>About Us</h1>
+        <p>
+          Welcome to my portfolio! I am Aryan Kushwaha, a passionate IT student
+          with growing knowledge in HTML, CSS, JavaScript, Python, React.js, and
+          Linux (Kali) / Cyber Security. I am currently pursuing a Bachelor’s
+          degree in Computer Science and Information Technology (BSc.CSIT) at
+          Orchid International College. I enjoy creating interactive and
+          visually stunning websites that bring ideas to life. Let's build
+          something amazing together!
+        </p>
+
+        <section id="education">
+          <div class="container">
+            <div class="education">
+              <div class="card">
+                <div class="icon">🎓</div>
+                <h3>Skills</h3>
+                <ul>
+                  <li>React.js</li>
+                  <li>PHP</li>
+                  <li>C/C++</li>
+                  <li>Python</li>
+                  <li>C#</li>
+                  <li>SQL</li>
+                  <li>HTML/CSS/JS</li>
+                  <li>Linux (Kali)</li>
+                </ul>
+              </div>
+              <div class="card">
+                <div class="icon">📚</div>
+                <h3>Education</h3>
+                <ul>
+                  <li><b>2026</b> BSc.CSIT from Orchid International College, Bijaya Chowk Gaushala (KTM)</li>
+                  <li><b>2021</b> +2 in Science from Liver Pool International College, New Baneshwor (KTM)</li>
+                  <li><b>2019</b> SEE from Divya Jyoti Sec. School, Barahathawa (Sarlahi)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="about-image">
+        <img src="./images/profile.jpg" alt="Aryan Kushwaha Profile Picture" />
+      </div>
+    </section>
+
+    <footer>&copy; 2025 Aryan Kushwaha. All rights reserved.</footer>
+  </body>
+</html>

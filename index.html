@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+ 
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #283c86, #45a247);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      header {
+        background: #121212;
+        color: #fff;  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+        flex-wrap: wrap;
+      }
+
+      header .logo {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #f72c50;
+      }
+
+      header nav {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      header nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 15px;
+        font-size: 1rem;
+        position: relative;
+        transition: color 0.3s ease;
+        font-weight: 500;
+      }
+    
+      /* Add gradient text color animation on hover */
+      header nav a:hover {
+        color: transparent;
+        background: linear-gradient(45deg, #c01818, #72d6c9, #8fa1ff, #ff758c);
+        -webkit-background-clip: text;
+        background-clip: text;
+        transition: 0.4s;
+      }
+    
+      /* Animated underline effect */
+      header nav a::before {
+        content: "";
+        position: absolute;
+        bottom: -5px; /* Distance below the text */
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #ff7eb3, #72d6c9);
+        transition: width 0.3s ease;
+      }
+
+      
+    
+      header nav a:hover::before {
+        width: 100%; /* Expands the underline on hover */
+      }
+      .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 10%;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 span {
+        color: #f72c50;
+      }
+
+      .circle-container {
+        border-radius: 20%;
+        background-image: url(./images/Back.jpg);
+        color: #f72c50;
+        position: relative;
+        width: 850px;
+        height: 600px;
+        margin: 0 auto;
+      }
+
+      .circle-container img {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        animation: rotate 5s linear infinite;
+      }
+
+      .circle-container img:nth-child(1) {
+        top: 0;
+        left: 30%;
+        transform: translate(-50%, 0);
+      }
+
+      .circle-container img:nth-child(2) {
+        top: 50%;
+        right: 20px;
+        transform: translate(0, -50%);
+      }
+
+      .circle-container img:nth-child(3) {
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+
+      .circle-container img:nth-child(4) {
+        top: 50%;
+        left: 15px;
+        transform: translate(0, -50%);
+      }
+
+      .circle-container img:nth-child(5) {
+        top: 5%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+      }
+
+      .kali {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+      }
+
+      footer {
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        background: #121212;
+        color: #fff;
+        font-size: 1rem;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .circle-container {
+          width: 200px;
+          height: 200px;
+        }
+
+        .circle-container img {
+          width: 40px;
+          height: 40px;
+        }
+
+        .monitor {
+          width: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Aryan Kushwaha</div>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./service.html">Services</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Hi, I'm <span>Aryan Kushwaha</span></h1>
+      <div class="circle-container">
+        <img
+          src="./images/python-5.svg"
+          alt="Python"
+        />
+        <img
+          src="./images/logo-javascript.svg"
+          alt="JavaScript"
+        />
+        <img
+          src="./images/html-1.svg"
+          alt="HTML"
+        />
+        <img
+          src="./images/css-3.svg"
+          alt="CSS"
+        />
+        <img
+          src="./images/react-2.svg"
+          alt="React.js"
+        />
+        <img
+          src="./images/kali-1.svg"
+          class="kali"
+          alt="kali"
+        />
+      </div>
+    </section>
+
+    <footer>&copy; 2025 Aryan Kushwaha. All rights reserved.</footer> 
+ </body>
+</html>

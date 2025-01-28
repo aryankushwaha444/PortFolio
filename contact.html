@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #283c86, #45a247);
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            flex-wrap: wrap;
+        }
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #f72c50;
+        }
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        header nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 15px;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        header nav a:hover {
+            color: transparent;
+            background: linear-gradient(45deg, #c01818, #72d6c9, #8fa1ff, #ff758c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            transition: 0.4s;
+        }
+        header nav a::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff7eb3, #72d6c9);
+            transition: width 0.3s ease;
+        }
+        header nav a:hover::before {
+            width: 100%;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .social-icons a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background: #ff6f61;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .contact-form button:hover {
+            background: #e05244;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background: #121212;
+            color: #fff;
+            font-size: 1rem;
+          }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Aryan Kushwaha</div>
+        <nav>
+            <a href="./index.html" aria-label="Home">Home</a>
+            <a href="./about.html" aria-label="About">About</a>
+            <a href="./service.html" aria-label="Services">Services</a>
+            <a href="./contact.html" aria-label="Contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>Let's connect! Feel free to reach out via social media or drop me a message.</p>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/rupnarayan444/" target="_blank" rel="noopener noreferrer" class="fab fa-facebook" aria-label="Facebook"></a>
+            <a href="https://www.instagram.com/r_yan_62?igsh=enExYzBld3d0YjFm&utm_source=qr" target="_blank" rel="noopener noreferrer" class="fab fa-instagram" aria-label="Instagram"></a>
+            <a href="https://www.linkedin.com/in/aryan-kushwaha-47479033b" target="_blank" rel="noopener noreferrer" class="fab fa-linkedin" aria-label="LinkedIn"></a>
+            <a href="https://github.com/aryankushwaha444" target="_blank" rel="noopener noreferrer" class="fab fa-github" aria-label="GitHub"></a>
+            <a href="https://x.com/aryanku22800630?s=21" target="_blank" rel="noopener noreferrer" class="fab fa-twitter" aria-label="Twitter"></a>
+        </div>
+
+        <form class="contact-form" novalidate>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer>&copy; 2025 Aryan Kushwaha. All rights reserved.</footer>
+</body>
+</html>
