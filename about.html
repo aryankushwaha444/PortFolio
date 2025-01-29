@@ -196,37 +196,41 @@
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-10px); }
         }
-  
-        @media (max-width: 768px) {
+
+        @media (max-width: 950px) {
           header {
               flex-direction: column;
               align-items: center;
           }
-  
+
           .menu-toggle {
               display: block;
           }
-  
+
           nav {
               flex-direction: column;
-              display: none;
               text-align: center;
+              width: 100%;
           }
-  
+          .about-image{
+            width: 50%;
+          }
+
           nav.active {
               display: flex;
           }
-  
+
           .about-section {
               flex-direction: column;
               text-align: center;
           }
-  
+
           .education {
               flex-direction: column;
               align-items: center;
           }
-        }
+      }
+  
       </style>
     </style>
   </head>
@@ -242,7 +246,11 @@
     </header>
 
     <section class="about-section">
+      <div class="about-image">
+        <img src="./images/profile.jpg" alt="Aryan Kushwaha Profile Picture" />
+      </div>
       <div class="about-text">
+
         <h1>About Us</h1>
         <p>
           Welcome to my portfolio! I am Aryan Kushwaha, a passionate IT student
@@ -284,9 +292,7 @@
           </div>
         </section>
       </div>
-      <div class="about-image">
-        <img src="./images/profile.jpg" alt="Aryan Kushwaha Profile Picture" />
-      </div>
+
     </section>
 
     <footer>&copy; 2025 Aryan Kushwaha. All rights reserved.</footer>
