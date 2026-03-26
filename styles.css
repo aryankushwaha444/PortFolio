@@ -178,8 +178,7 @@ button {
   gap: 3px;
 }
 .brand-logo {
-    width: 90px;
-    height:auto;
+    width: 90px; !important;
     object-fit: contain;
     display: block;
     flex-shrink: 0;
