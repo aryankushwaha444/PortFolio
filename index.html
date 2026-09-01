@@ -2,81 +2,255 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image" href="./assests/logo.png">
+
+    <link rel="icon" type="image/png" href="./assests/logo.png" />
+
     <title>Aryan Kushwaha | Portfolio</title>
+
     <meta
       name="description"
       content="Portfolio of Aryan Kushwaha — BSc.CSIT student, web developer, and aspiring cybersecurity enthusiast."
     />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./styles.css">
 
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./styles.css" />
   </head>
+
   <body>
     <!-- ============================
          HEADER
     ============================ -->
+
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="#home">
-          <img src="./assests/logo.png" alt="RN Logo" class="brand-logo" />
+        <!-- Logo -->
+        <a class="brand" href="#home" aria-label="Aryan Kushwaha Home">
+          <img
+            src="./assests/logo.png"
+            alt="Aryan Kushwaha Logo"
+            class="brand-logo"
+          />
+
           <span class="brand-dot"></span>
         </a>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+        <!-- Mobile Menu Button -->
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
           <i class="fa-solid fa-bars"></i>
         </button>
 
+        <!-- Navigation -->
         <nav class="nav-links" id="navLinks">
           <a href="#home">Home</a>
+
           <a href="#about">About</a>
+
           <a href="#skills">Skills</a>
+
+          <!-- ============================
+               PROJECTS DROPDOWN
+          ============================ -->
+
+          <div class="nav-projects">
+            <button
+              class="projects-toggle"
+              id="projectsToggle"
+              type="button"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span>Projects</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <!-- ============================
+                 PROJECTS DROPDOWN
+            ============================= -->
+            <div class="projects-dropdown" id="projectsDropdown">
+              <!-- ============================
+                   SOLO DEVELOPED
+              ============================= -->
+              <div class="project-category">
+                <div class="project-category-title">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Solo Developed</span>
+                </div>
+
+                <!-- PROJECT 1 -->
+                <article class="project-item">
+                  <img
+                    src="./images/Gyanodaya Bal Batika School.png"
+                    alt="Gyanodaya Bal Batika School Dashboard"
+                    loading="lazy"
+                  />
+
+                  <div class="project-info">
+                    <h4>Gyanodaya Bal Batika School</h4>
+
+                    <p>
+                      Building knowledge, character and a brighter future for every student
+                    </p>
+
+                    <div class="project-links">
+                      <a
+                        href="https://gyanodaya-bal-batika-school.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Project
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- ============================
+                   CONTRIBUTOR
+              ============================= -->
+              <div class="project-category">
+                <div class="project-category-title">
+                  <i class="fa-solid fa-users"></i>
+                  <span>Contributor</span>
+                </div>
+
+                <!-- PROJECT 2 -->
+                <article class="project-item">
+                  <img
+                    src="./images/starMicroInsurance.jpg"
+                    alt="Star Micro Insurance Co. Ltd. Dashboard"
+                    loading="lazy"
+                  />
+
+                  <div class="project-info">
+                    <h4>Star Micro Insurance Co. Ltd.</h4>
+
+                    <p>
+                      Responsive star Micro Insurance Co. Ltd. with a modern user interface.
+                    </p>
+
+                    <div class="project-links">
+                      <a
+                        href="https://starmicroinsure.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Project
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </a>
+
+                    </div>
+                  </div>
+                </article>
+
+                <!-- PROJECT 3 -->
+                <article class="project-item">
+                  <img
+                    src="./images/Quiz Battleground.png"
+                    alt="Quiz Battleground Website"
+                    loading="lazy"
+                  />
+
+                  <div class="project-info">
+                    <h4>Quiz Battleground</h4>
+
+                    <p>Test your knowledge, challenge your friends, and compete in real-time quiz battles</p>
+
+                    <div class="project-links">
+                      <a
+                        href="https://quiz-battleground.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Project
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
           <a href="#services">Services</a>
+
           <a href="#education">Education</a>
+
           <a href="#contact">Contact</a>
         </nav>
 
+        <!-- Navbar Actions -->
         <div class="nav-actions">
-          <a class="btn btn-ghost" href="#contact">Let's Talk</a>
+          <a class="btn btn-ghost" href="#contact"> Let's Talk </a>
+
           <a
             class="btn btn-primary"
             href="./assests/Aaryan_Kushawaha_CV.pdf"
             download
           >
-            <i class="fa-solid fa-download"></i> Resume
+            <i class="fa-solid fa-download"></i>
+
+            Resume
           </a>
         </div>
       </div>
     </header>
 
+    <!-- ============================
+         MAIN
+    ============================ -->
+
     <main>
       <!-- ============================
            HERO
       ============================ -->
+
       <section class="hero" id="home">
         <div class="hero-glow"></div>
+
         <div class="container hero-grid">
           <div class="hero-left">
             <div class="hero-badge">
               <i class="fa-solid fa-circle-dot"></i>
+
               Available for freelance work
             </div>
 
             <h1>
               Web<br />
-              Developer &amp; <span class="highlight">Security</span><br />
+
+              Developer &amp;
+
+              <span class="highlight"> Security </span>
+
+              <br />
+
               Enthusiast
             </h1>
 
@@ -87,26 +261,38 @@
 
             <div class="hero-cta">
               <a class="btn btn-primary" href="#contact">
-                <i class="fa-solid fa-paper-plane"></i> Hire Me
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Hire Me
               </a>
+
               <a class="btn btn-ghost" href="#services">
-                View Services <i class="fa-solid fa-arrow-right"></i>
+                View Services
+
+                <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
 
             <div class="hero-stats">
               <div class="stat">
                 <div class="stat-num">3+</div>
+
                 <div class="stat-label">LANGUAGES</div>
               </div>
+
               <div class="stat-divider"></div>
+
               <div class="stat">
                 <div class="stat-num">6</div>
+
                 <div class="stat-label">TECH STACKS</div>
               </div>
+
               <div class="stat-divider"></div>
+
               <div class="stat">
                 <div class="stat-num">∞</div>
+
                 <div class="stat-label">CURIOSITY</div>
               </div>
             </div>
@@ -115,7 +301,11 @@
           <aside class="hero-right">
             <div class="profile-card">
               <div class="profile-img-wrap">
-                <img class="profile" src="./images/profile.jpg" alt="Aryan Kushwaha" />
+                <img
+                  class="profile"
+                  src="./images/profile.jpg"
+                  alt="Aryan Kushwaha"
+                />
               </div>
             </div>
           </aside>
@@ -125,13 +315,19 @@
       <!-- ============================
            ABOUT
       ============================ -->
+
       <section class="section" id="about">
         <div class="container">
           <div class="eyebrow anim anim-d1">About Me</div>
+
           <h2 class="section-title anim anim-d2">
-            A developer who cares<br />about
-            <span class="highlight">every detail</span>
+            A developer who cares<br />
+
+            about
+
+            <span class="highlight"> every detail </span>
           </h2>
+
           <p class="section-sub anim anim-d3">
             Combining strong fundamentals in web development with a growing
             passion for security and Linux systems.
@@ -140,6 +336,7 @@
           <div class="about-grid">
             <article class="card anim anim-d3">
               <h3>Who I Am</h3>
+
               <p>
                 I'm Aryan Kushwaha, a passionate IT student with growing skills
                 in HTML, CSS, JavaScript, React, Python, SQL, PHP, and Linux. I
@@ -147,8 +344,10 @@
                 that actually feel great to use.
               </p>
             </article>
+
             <article class="card anim anim-d4">
               <h3>What I Bring</h3>
+
               <p>
                 I focus on clean UI structure, responsive design, intuitive user
                 journeys, and practical development skills. My goal is to
@@ -163,12 +362,19 @@
       <!-- ============================
            SKILLS
       ============================ -->
+
       <section class="section" id="skills">
         <div class="container">
-          <div class="eyebrow anim anim-d1"> <b>Core Skills</b></div>
+          <div class="eyebrow anim anim-d1">
+            <b>Core Skills</b>
+          </div>
+
           <h2 class="section-title anim anim-d2">
-            Technology stack<br />and strengths
+            Technology stack<br />
+
+            and strengths
           </h2>
+
           <p class="section-sub anim anim-d3">
             Tools I use to bring ideas to life — from UI to the command line.
           </p>
@@ -177,42 +383,57 @@
             <article class="skill-card anim anim-d2">
               <div class="skill-icon">
                 <div class="skill-icon-inner"></div>
+
                 <i class="fa-solid fa-code"></i>
               </div>
+
               <h3>Frontend Development</h3>
+
               <p>
                 HTML, CSS, JavaScript, responsive layouts, landing pages, and
                 clean UI structure.
               </p>
             </article>
+
             <article class="skill-card anim anim-d3">
               <div class="skill-icon">
                 <div class="skill-icon-inner"></div>
+
                 <i class="fa-brands fa-react"></i>
               </div>
+
               <h3>React Basics</h3>
+
               <p>
                 Component-based interfaces, reusable sections, and modern
                 frontend architecture.
               </p>
             </article>
+
             <article class="skill-card anim anim-d4">
               <div class="skill-icon">
                 <div class="skill-icon-inner"></div>
+
                 <i class="fa-brands fa-python"></i>
               </div>
+
               <h3>Programming</h3>
+
               <p>
                 Python, C, C++, C#, PHP, and SQL fundamentals for practical
                 project work.
               </p>
             </article>
+
             <article class="skill-card anim anim-d5">
               <div class="skill-icon">
                 <div class="skill-icon-inner"></div>
+
                 <i class="fa-solid fa-shield-halved"></i>
               </div>
+
               <h3>Cybersecurity</h3>
+
               <p>
                 Linux, Kali, web security interest, and a growing understanding
                 of secure systems.
@@ -225,12 +446,17 @@
       <!-- ============================
            SERVICES
       ============================ -->
+
       <section class="section" id="services">
         <div class="container">
           <div class="eyebrow anim anim-d1">Services</div>
+
           <h2 class="section-title anim anim-d2">
-            What I can<br />help you with
+            What I can<br />
+
+            help you with
           </h2>
+
           <p class="section-sub anim anim-d3">
             Practical services built around real skills — no fluff, just
             results.
@@ -239,10 +465,13 @@
           <div class="services-grid">
             <article class="service-card anim anim-d2">
               <div class="svc-num">01 —</div>
+
               <div class="svc-icon">
                 <i class="fa-solid fa-laptop-code"></i>
               </div>
+
               <h3>Portfolio &amp; Landing Pages</h3>
+
               <p>
                 Clean personal websites, static pages, and responsive portfolio
                 designs built to impress.
@@ -251,10 +480,13 @@
 
             <article class="service-card anim anim-d3">
               <div class="svc-num">02 —</div>
+
               <div class="svc-icon">
                 <i class="fa-solid fa-layer-group"></i>
               </div>
-              <h3>Web Development using MERN, Laravel & Django</h3>
+
+              <h3>Web Development using MERN, Laravel &amp; Django</h3>
+
               <p>
                 Building modern full-stack web applications with the MERN stack.
                 Creating responsive, scalable, and secure web solutions with
@@ -264,8 +496,13 @@
 
             <article class="service-card anim anim-d4">
               <div class="svc-num">03 —</div>
-              <div class="svc-icon"><i class="fa-solid fa-lock"></i></div>
+
+              <div class="svc-icon">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+
               <h3>Security-Aware Development</h3>
+
               <p>
                 Basic awareness of secure development practices and growing
                 cybersecurity understanding.
@@ -278,10 +515,13 @@
       <!-- ============================
            EDUCATION
       ============================ -->
+
       <section class="section" id="education">
         <div class="container">
           <div class="eyebrow anim anim-d1">Education</div>
+
           <h2 class="section-title anim anim-d2">Academic background</h2>
+
           <p class="section-sub anim anim-d3">
             A journey from Sarlahi to Kathmandu, building the foundation for a
             career in tech.
@@ -290,28 +530,39 @@
           <div class="education-list">
             <div class="edu-item anim anim-d2">
               <div class="edu-dot">BSc</div>
+
               <div class="edu-content">
-                <div class="edu-year">2021 — 2026</div>
+                <div class="edu-year">2026</div>
+
                 <h3>BSc.CSIT</h3>
+
                 <p>
                   Orchid International College, Bijaya Chowk, Gaushala,
                   Kathmandu
                 </p>
               </div>
             </div>
+
             <div class="edu-item anim anim-d3">
               <div class="edu-dot">+2</div>
+
               <div class="edu-content">
-                <div class="edu-year">2019 — 2021</div>
+                <div class="edu-year">2021</div>
+
                 <h3>+2 Science</h3>
+
                 <p>Liverpool International College, New Baneshwor, Kathmandu</p>
               </div>
             </div>
+
             <div class="edu-item anim anim-d4">
               <div class="edu-dot">SEE</div>
+
               <div class="edu-content">
                 <div class="edu-year">2019</div>
+
                 <h3>SEE — Secondary Education</h3>
+
                 <p>Divya Jyoti Secondary School, Barahathawa, Sarlahi</p>
               </div>
             </div>
@@ -322,128 +573,195 @@
       <!-- ============================
            CONTACT
       ============================ -->
+
       <section class="section" id="contact">
         <div class="container">
           <div class="eyebrow anim anim-d1">Contact</div>
+
           <h2 class="section-title anim anim-d2">
-            Let's build something<br /><span class="highlight">together</span>
+            Let's build something<br />
+
+            <span class="highlight"> together </span>
           </h2>
+
           <p class="section-sub anim anim-d3">
             Have a project in mind? Let's talk. I'm always open to new
             opportunities.
           </p>
 
           <div class="contact-grid">
+            <!-- Contact Information -->
+
             <div class="contact-info anim anim-d3">
               <div class="contact-block">
                 <div class="contact-block-label">Email</div>
-                <a href="mailto:rupnarayan444@gmail.com"
-                  >rupnarayan444@gmail.com</a
-                >
+
+                <a href="mailto:rupnarayan444@gmail.com">
+                  rupnarayan444@gmail.com
+                </a>
               </div>
+
               <div class="contact-block">
                 <div class="contact-block-label">Location</div>
-                <span>Kathmandu, Nepal</span>
+
+                <span> Kathmandu, Nepal </span>
               </div>
+
               <div class="contact-block">
                 <div class="contact-block-label">Social</div>
+
                 <div class="socials">
                   <a
                     class="social-btn"
                     href="https://github.com/aryankushwaha444"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     aria-label="GitHub"
-                    ><i class="fa-brands fa-github"></i
-                  ></a>
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+
                   <a
                     class="social-btn"
                     href="https://www.linkedin.com/in/aryan-kushwaha-47479033b"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     aria-label="LinkedIn"
-                    ><i class="fa-brands fa-linkedin-in"></i
-                  ></a>
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+
                   <a
                     class="social-btn"
                     href="https://x.com/aryanku22800630?s=21"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     aria-label="Twitter/X"
-                    ><i class="fa-brands fa-x-twitter"></i
-                  ></a>
+                  >
+                    <i class="fa-brands fa-x-twitter"></i>
+                  </a>
+
                   <a
                     class="social-btn"
                     href="https://www.instagram.com/r_yan_62"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     aria-label="Instagram"
-                    ><i class="fa-brands fa-instagram"></i
-                  ></a>
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+
                   <a
                     class="social-btn"
                     href="https://www.facebook.com/rupnarayan444/"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     aria-label="Facebook"
-                    ><i class="fa-brands fa-facebook-f"></i
-                  ></a>
+                  >
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
                 </div>
               </div>
             </div>
 
+            <!-- Contact Form -->
+
             <article class="form-card anim anim-d4">
               <h3>Send a Message</h3>
-              
-              <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="d75f84be-ef22-4efa-91eb-52a25806c8be" />
-                <input type="hidden" name="subject" value="New Portfolio Contact Message" />
+
+              <form
+                id="contactForm"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="d75f84be-ef22-4efa-91eb-52a25806c8be"
+                />
+
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="New Portfolio Contact Message"
+                />
+
                 <input type="checkbox" name="botcheck" style="display: none" />
-            
+
                 <div class="form-row">
                   <div class="field">
-                    <label>Full Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      name="name" 
-                      placeholder="Your full name" 
-                      required 
+                    <label for="name"> Full Name </label>
+
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Your full name"
+                      required
                     />
                   </div>
+
                   <div class="field">
-                    <label>Email</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      name="email" 
-                      placeholder="your@email.com" 
-                      required 
+                    <label for="email"> Email </label>
+
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="your@email.com"
+                      required
                     />
                   </div>
                 </div>
-            
+
                 <div class="field">
-                  <label>Message</label>
-                  <textarea 
-                    id="message" 
-                    name="message" 
-                    rows="5" 
-                    placeholder="Tell me about your project..." 
+                  <label for="message"> Message </label>
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Tell me about your project..."
                     required
                   ></textarea>
                 </div>
-            
-                <button id="submitBtn" class="btn btn-primary" type="submit" style="width: 100%; justify-content: center;">
-                  <i class="fa-solid fa-paper-plane"></i> Send Message
+
+                <button
+                  id="submitBtn"
+                  class="btn btn-primary"
+                  type="submit"
+                  style="width: 100%; justify-content: center"
+                >
+                  <i class="fa-solid fa-paper-plane"></i>
+
+                  Send Message
                 </button>
               </form>
-            
-              <!-- Messages -->
-              <p id="rateLimitMsg" style="color: var(--coral); margin-top: 12px; font-size: 0.9rem; display: none;"></p>
-              <p id="validationMsg" style="color: var(--coral); margin-top: 8px; font-size: 0.9rem; display: none;"></p>
-            </article>
 
+              <!-- Rate Limit Message -->
+
+              <p
+                id="rateLimitMsg"
+                style="
+                  color: var(--coral);
+                  margin-top: 12px;
+                  font-size: 0.9rem;
+                  display: none;
+                "
+              ></p>
+
+              <!-- Validation Message -->
+
+              <p
+                id="validationMsg"
+                style="
+                  color: var(--coral);
+                  margin-top: 8px;
+                  font-size: 0.9rem;
+                  display: none;
+                "
+              ></p>
+            </article>
           </div>
         </div>
       </section>
@@ -452,161 +770,125 @@
     <!-- ============================
          FOOTER
     ============================ -->
+
     <footer class="site-footer">
       <div class="container footer-row">
-        <p>© 2025 <span>Aryan Kushwaha</span>. All rights reserved.</p>
-        <p>Built with <span>♥</span> in Kathmandu, Nepal.</p>
+        <p>
+          © 2026
+          <span>Aryan Kushwaha</span>. All rights reserved.
+        </p>
+
+        <p>
+          Built with
+          <span>♥</span>
+          in Kathmandu, Nepal.
+        </p>
       </div>
     </footer>
 
+    <!-- ============================
+         JAVASCRIPT
+    ============================ -->
+
     <script>
-      // Mobile nav toggle
+      // ==============================
+      // MOBILE NAVIGATION
+      // ==============================
+
       const menuBtn = document.getElementById("menuBtn");
       const navLinks = document.getElementById("navLinks");
-      menuBtn.addEventListener("click", () =>
-        navLinks.classList.toggle("open")
-      );
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => navLinks.classList.remove("open"));
+
+      if (menuBtn && navLinks) {
+        menuBtn.addEventListener("click", () => {
+          navLinks.classList.toggle("open");
+        });
+      }
+
+      // ==============================
+      // PROJECTS DROPDOWN
+      // ==============================
+
+      const projectsToggle = document.getElementById("projectsToggle");
+      const projectsNav = document.querySelector(".nav-projects");
+
+      if (projectsToggle && projectsNav) {
+        // Open / close dropdown
+        projectsToggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+
+          const isOpen = projectsNav.classList.toggle("open");
+
+          // Accessibility
+          projectsToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+          );
+        });
+
+        // Prevent dropdown click from closing itself
+        const projectsDropdown = document.getElementById("projectsDropdown");
+
+        if (projectsDropdown) {
+          projectsDropdown.addEventListener("click", function (event) {
+            event.stopPropagation();
+          });
+        }
+
+        // Close when clicking outside
+        document.addEventListener("click", function (event) {
+          if (!projectsNav.contains(event.target)) {
+            projectsNav.classList.remove("open");
+
+            projectsToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Close when clicking a project link
+        document
+          .querySelectorAll(".projects-dropdown a")
+          .forEach(function (link) {
+            link.addEventListener("click", function () {
+              projectsNav.classList.remove("open");
+
+              projectsToggle.setAttribute("aria-expanded", "false");
+            });
+          });
+      }
+
+      // ==============================
+      // CLOSE MOBILE MENU
+      // ==============================
+
+      document.querySelectorAll(".nav-links > a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (navLinks) {
+            navLinks.classList.remove("open");
+          }
+        });
       });
 
-      // Scroll-triggered entrance animations
+      // ==============================
+      // SCROLL ANIMATIONS
+      // ==============================
+
       const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((el) => {
-            if (el.isIntersecting) {
-              el.target.classList.add("visible");
-              observer.unobserve(el.target);
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.12 }
+        {
+          threshold: 0.12,
+        }
       );
 
-      document.querySelectorAll(".anim").forEach((el) => observer.observe(el));
-
-
-// ====================== RATE LIMITING ======================
-const RATE_LIMIT_KEY = 'portfolio_contact_submissions';
-const MAX_SUBMISSIONS = 3;
-const TIME_WINDOW = 60 * 60 * 1000; // 1 hour
-
-const form = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
-const rateLimitMsg = document.getElementById('rateLimitMsg');
-const validationMsg = document.getElementById('validationMsg');
-
-function getSubmissions() {
-  const data = localStorage.getItem(RATE_LIMIT_KEY);
-  return data ? JSON.parse(data) : [];
-}
-
-function saveSubmission() {
-  let submissions = getSubmissions();
-  submissions.push(Date.now());
-  const now = Date.now();
-  submissions = submissions.filter(ts => now - ts < TIME_WINDOW);
-  localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(submissions));
-}
-
-function canSubmit() {
-  const submissions = getSubmissions();
-  const now = Date.now();
-  const recent = submissions.filter(ts => now - ts < TIME_WINDOW);
-  return recent.length < MAX_SUBMISSIONS;
-}
-
-function updateRateLimitUI() {
-  if (!canSubmit()) {
-    submitBtn.disabled = true;
-    rateLimitMsg.textContent = `You've reached the limit of ${MAX_SUBMISSIONS} messages per hour. Please try again later.`;
-    rateLimitMsg.style.display = 'block';
-  } else {
-    submitBtn.disabled = false;
-    rateLimitMsg.style.display = 'none';
-  }
-}
-
-// ====================== VALIDATION ======================
-function validateName(name) {
-  if (name.length < 2) return "Name must be at least 2 characters long.";
-  if (!/^[a-zA-Z\s]+$/.test(name)) return "Name should only contain letters and spaces.";
-  return "";
-}
-
-function validateEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) return "Please enter a valid email address.";
-  return "";
-}
-
-function showValidationError(message) {
-  validationMsg.textContent = message;
-  validationMsg.style.display = 'block';
-  
-  // Auto hide after 5 seconds
-  setTimeout(() => {
-    validationMsg.style.display = 'none';
-  }, 5000);
-}
-
-// ====================== FORM SUBMISSION ======================
-form.addEventListener('submit', function(e) {
-  // Clear previous validation message
-  validationMsg.style.display = 'none';
-
-  // Rate limit check
-  if (!canSubmit()) {
-    e.preventDefault();
-    updateRateLimitUI();
-    return;
-  }
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  // Name validation
-  const nameError = validateName(name);
-  if (nameError) {
-    e.preventDefault();
-    showValidationError(nameError);
-    return;
-  }
-
-  // Email validation
-  const emailError = validateEmail(email);
-  if (emailError) {
-    e.preventDefault();
-    showValidationError(emailError);
-    return;
-  }
-
-  // Message basic check
-  if (message.length < 10) {
-    e.preventDefault();
-    showValidationError("Message should be at least 10 characters long.");
-    return;
-  }
-
-  // All good → proceed
-  const originalText = submitBtn.innerHTML;
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-
-  saveSubmission();
-
-  // Reset button after delay
-  setTimeout(() => {
-    submitBtn.innerHTML = originalText;
-    submitBtn.disabled = false;
-  }, 2500);
-});
-
-// Initialize
-updateRateLimitUI();
-setInterval(updateRateLimitUI, 30000);
-
+      document
+        .querySelectorAll(".anim")
+        .forEach((element) => observer.observe(element));
     </script>
   </body>
 </html>
