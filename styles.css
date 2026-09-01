@@ -811,6 +811,39 @@ button {
 }
 
 /* Contact Form */
+
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
+/* Honeypot field used for spam protection */
+.botcheck {
+  display: none;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Form messages */
+.form-message {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.rate-limit-message,
+.validation-message {
+  color: var(--coral);
+}
+
+.validation-message {
+  margin-top: 8px;
+}
+
 .form-card {
   padding: 36px;
   border-radius: var(--r-lg);
