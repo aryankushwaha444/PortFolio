@@ -1,6 +1,3 @@
-/* ============================
-   DESIGN TOKENS
-============================ */
 :root {
   --ink: #0c0e14;
   --ink-soft: #14171f;
@@ -40,9 +37,7 @@
   --ease: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* ============================
-   RESET & BASE
-============================ */
+/* RESET & BASE */
 *,
 *::before,
 *::after {
@@ -61,6 +56,7 @@ body {
   color: var(--snow);
   line-height: 1.65;
   overflow-x: hidden;
+  padding-top: 72px;
 }
 
 /* Subtle noise texture overlay */
@@ -90,9 +86,8 @@ button {
   z-index: 1;
 }
 
-/* ============================
-   UTILITY
-============================ */
+/* UTILITY */
+
 .section {
   padding: 100px 0;
 }
@@ -137,30 +132,48 @@ button {
   background-clip: text;
 }
 
-/* ============================
-   HEADER / NAV
-============================ */
+/* HEADER / NAV */
+
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   padding: 0;
 }
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 72px;
+  z-index: 1000;
+  padding: 0;
+}
+
 .site-header::before {
   content: "";
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(20px) saturate(180%);
+
   background: rgba(12, 14, 20, 0.7);
+
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
   border-bottom: 1px solid var(--rim);
 }
 
 .nav {
   position: relative;
+  min-height: 72px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72px;
+
   gap: 16px;
 }
 
@@ -293,9 +306,6 @@ button {
   justify-content: center;
 }
 
-/* ============================
-   HERO
-============================ */
 .hero {
   padding: 88px 0 80px;
   position: relative;
@@ -490,9 +500,8 @@ button {
   font-size: 0.9rem;
 }
 
-/* ============================
-   ABOUT
-============================ */
+/* ABOUT */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -524,9 +533,8 @@ button {
   font-size: 0.97rem;
 }
 
-/* ============================
-   SKILLS
-============================ */
+/* SKILLS */
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -603,9 +611,8 @@ button {
   font-weight: 300;
 }
 
-/* ============================
-   SERVICES
-============================ */
+/* SERVICES */
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -666,9 +673,8 @@ button {
   font-weight: 300;
 }
 
-/* ============================
-   EDUCATION
-============================ */
+/* EDUCATION */
+
 .education-list {
   display: grid;
   gap: 0;
@@ -737,9 +743,6 @@ button {
   font-weight: 300;
 }
 
-/* ============================
-   CONTACT
-============================ */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -812,12 +815,6 @@ button {
 
 /* Contact Form */
 
-
-/* ==========================================
-   CONTACT FORM
-========================================== */
-
-/* Honeypot field used for spam protection */
 .botcheck {
   display: none;
 }
@@ -917,9 +914,8 @@ button {
   box-shadow: 0 0 0 3px rgba(180, 242, 110, 0.08);
 }
 
-/* ============================
-   FOOTER
-============================ */
+/* FOOTER */
+
 .site-footer {
   padding: 28px 0 36px;
   border-top: 1px solid var(--rim);
@@ -941,9 +937,8 @@ button {
   color: var(--lime);
 }
 
-/* ============================
-   ENTRANCE ANIMATIONS
-============================ */
+/* ENTRANCE ANIMATIONS */
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -1011,9 +1006,8 @@ button {
   animation: fadeIn 0.9s var(--ease) 0.5s forwards;
 }
 
-/* ============================
-   RESPONSIVE
-============================ */
+/* RESPONSIVE */
+
 @media (max-width: 1024px) {
   .skills-grid {
     grid-template-columns: 1fr 1fr;
@@ -1029,7 +1023,7 @@ button {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 925px) {
   .nav-links {
     display: none;
   }
@@ -1081,10 +1075,7 @@ button {
   }
 }
 
-```css
-/* =========================================
-   PROJECTS NAVIGATION
-========================================= */
+/* PROJECTS NAVIGATION */
 
 .nav-projects {
   position: relative;
@@ -1124,9 +1115,7 @@ button {
   transform: rotate(180deg);
 }
 
-/* =========================================
-   DROPDOWN
-========================================= */
+/* DROPDOWN */
 
 .projects-dropdown {
   position: absolute;
@@ -1173,9 +1162,7 @@ button {
   transform: translateX(-50%) translateY(0);
 }
 
-/* =========================================
-   PROJECT CATEGORY
-========================================= */
+/* PROJECT CATEGORY */
 
 .project-category {
   margin-bottom: 18px;
@@ -1213,9 +1200,7 @@ button {
   font-size: 0.75rem;
 }
 
-/* =========================================
-   PROJECT ITEM
-========================================= */
+/* PROJECT ITEM */
 
 .project-item {
   display: flex;
@@ -1247,27 +1232,18 @@ button {
   background: rgba(0, 0, 0, 0.055);
 }
 
-/* =========================================
-   PROJECT IMAGE
-========================================= */
+/* PROJECT IMAGE */
 
 .project-item > img {
   width: 105px;
-
   height: 78px;
-
   flex-shrink: 0;
-
   object-fit: cover;
-
   border-radius: 9px;
-
   display: block;
 }
 
-/* =========================================
-   PROJECT INFORMATION
-========================================= */
+/* PROJECT INFORMATION */
 
 .project-info {
   min-width: 0;
@@ -1293,9 +1269,7 @@ button {
   opacity: 0.65;
 }
 
-/* =========================================
-   PROJECT LINKS
-========================================= */
+/* PROJECT LINKS */
 
 .project-links {
   display: flex;
@@ -1343,57 +1317,72 @@ button {
   font-size: 0.85rem;
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE PROJECTS DROPDOWN — POPUP */
 
-@media (max-width: 768px) {
+@media (max-width: 925px) {
+  /* Projects wrapper */
+  .nav-projects {
+    position: static;
+  }
+
+  /* Projects popup */
   .projects-dropdown {
-    position: absolute;
+    position: fixed;
+    top: 50%;
+    left: 50%;
 
-    top: calc(100% + 10px);
-
-    left: 0;
-
-    transform: translateY(-10px);
-
-    width: min(390px, calc(100vw - 40px));
-
+    width: min(90vw, 360px);
     max-height: 70vh;
-  }
+    overflow-y: auto;
 
-  .nav-projects.open .projects-dropdown {
-    transform: translateY(0);
-  }
+    transform: translate(-50%, -50%) scale(0.95);
 
-  .project-item {
-    gap: 10px;
-  }
-
-  .project-item > img {
-    width: 90px;
-    height: 68px;
-  }
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 480px) {
-  .projects-dropdown {
-    width: calc(100vw - 30px);
+    background: rgba(15, 18, 25, 0.98);
+    border: 1px solid var(--rim);
+    border-radius: 16px;
 
     padding: 12px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55),
+      0 0 30px rgba(198, 255, 0, 0.08);
+
+    z-index: 2000;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
   }
 
-  .project-item {
-    flex-direction: column;
+  /* When Projects is opened */
+  .nav-projects.open .projects-dropdown,
+  .nav-projects.active .projects-dropdown,
+  .projects-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translate(-50%, -50%) scale(1);
   }
 
-  .project-item > img {
+  /* Project items */
+  .projects-dropdown .project-item {
+    display: block;
     width: 100%;
 
-    height: 130px;
+    padding: 14px 16px;
+    margin-bottom: 6px;
+
+    border-radius: 10px;
+  }
+
+  .projects-dropdown .project-item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Hover / touch */
+  .projects-dropdown .project-item:hover {
+    background: rgba(198, 255, 0, 0.08);
   }
 }

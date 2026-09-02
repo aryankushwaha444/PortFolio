@@ -37,10 +37,6 @@
   </head>
 
   <body>
-    <!-- ============================
-         HEADER
-    ============================ -->
-
     <header class="site-header">
       <div class="container nav">
         <!-- Logo -->
@@ -73,9 +69,7 @@
 
           <a href="#skills">Skills</a>
 
-          <!-- ============================
-               PROJECTS DROPDOWN
-          ============================ -->
+          <!-- PROJECTS DROPDOWN -->
 
           <div class="nav-projects">
             <button
@@ -89,13 +83,11 @@
               <i class="fa-solid fa-chevron-down"></i>
             </button>
 
-            <!-- ============================
-                 PROJECTS DROPDOWN
-            ============================= -->
+            <!-- PROJECTS DROPDOWN -->
+
             <div class="projects-dropdown" id="projectsDropdown">
-              <!-- ============================
-                   SOLO DEVELOPED
-              ============================= -->
+              <!-- SOLO DEVELOPED -->
+
               <div class="project-category">
                 <div class="project-category-title">
                   <i class="fa-solid fa-user"></i>
@@ -132,9 +124,8 @@
                 </article>
               </div>
 
-              <!-- ============================
-                   CONTRIBUTOR
-              ============================= -->
+              <!-- CONTRIBUTOR -->
+
               <div class="project-category">
                 <div class="project-category-title">
                   <i class="fa-solid fa-users"></i>
@@ -226,14 +217,8 @@
       </div>
     </header>
 
-    <!-- ============================
-         MAIN
-    ============================ -->
-
     <main>
-      <!-- ============================
-           HERO
-      ============================ -->
+      <!-- HERO -->
 
       <section class="hero" id="home">
         <div class="hero-glow"></div>
@@ -316,9 +301,7 @@
         </div>
       </section>
 
-      <!-- ============================
-           ABOUT
-      ============================ -->
+      <!-- ABOUT -->
 
       <section class="section" id="about">
         <div class="container">
@@ -363,9 +346,7 @@
         </div>
       </section>
 
-      <!-- ============================
-           SKILLS
-      ============================ -->
+      <!-- SKILLS -->
 
       <section class="section" id="skills">
         <div class="container">
@@ -447,9 +428,7 @@
         </div>
       </section>
 
-      <!-- ============================
-           SERVICES
-      ============================ -->
+      <!-- SERVICES -->
 
       <section class="section" id="services">
         <div class="container">
@@ -516,9 +495,7 @@
         </div>
       </section>
 
-      <!-- ============================
-           EDUCATION
-      ============================ -->
+      <!-- EDUCATION -->
 
       <section class="section" id="education">
         <div class="container">
@@ -574,9 +551,7 @@
         </div>
       </section>
 
-      <!-- ============================
-           CONTACT
-      ============================ -->
+      <!-- CONTACT -->
 
       <section class="section" id="contact">
         <div class="container">
@@ -753,74 +728,70 @@
       </section>
     </main>
 
-    <!-- ============================
-         FOOTER
-    ============================ -->
+    <!-- FOOTER -->
 
     <footer class="site-footer">
       <div class="container footer-row">
         <p>
-          © 2026
-          <span>Aryan Kushwaha</span>. All rights reserved.
+          © 2025
+          <span>Aryan Kushwah</span>. All rights reserved.
         </p>
 
         <p>
           Built with
           <span>♥</span>
-          in Kathmandu, Nepal.
+          in Nepal<span>🇳🇵</span>
         </p>
       </div>
     </footer>
 
-    <!-- ============================
-         JAVASCRIPT
-    ============================ -->
-
     <script>
-      // ==============================
       // MOBILE NAVIGATION
-      // ==============================
 
       const menuBtn = document.getElementById("menuBtn");
       const navLinks = document.getElementById("navLinks");
 
       if (menuBtn && navLinks) {
-        menuBtn.addEventListener("click", () => {
-          navLinks.classList.toggle("open");
+        menuBtn.addEventListener("click", function (event) {
+          event.stopPropagation();
+
+          const isOpen = navLinks.classList.toggle("open");
+
+          // Hamburger active state
+          menuBtn.classList.toggle("active", isOpen);
+
+          // Accessibility
+          menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
         });
       }
 
-      // ==============================
       // PROJECTS DROPDOWN
-      // ==============================
 
       const projectsToggle = document.getElementById("projectsToggle");
       const projectsNav = document.querySelector(".nav-projects");
+      const projectsDropdown = document.getElementById("projectsDropdown");
 
       if (projectsToggle && projectsNav) {
-        // Open / close dropdown
+        // Open / close Projects
         projectsToggle.addEventListener("click", function (event) {
           event.stopPropagation();
 
           const isOpen = projectsNav.classList.toggle("open");
 
-          // Accessibility
           projectsToggle.setAttribute(
             "aria-expanded",
             isOpen ? "true" : "false"
           );
         });
 
-        // Prevent dropdown click from closing itself
-        const projectsDropdown = document.getElementById("projectsDropdown");
-
+        // Prevent dropdown from triggering outside click
         if (projectsDropdown) {
           projectsDropdown.addEventListener("click", function (event) {
             event.stopPropagation();
           });
         }
 
-        // Close when clicking outside
+        // Close Projects when clicking outside
         document.addEventListener("click", function (event) {
           if (!projectsNav.contains(event.target)) {
             projectsNav.classList.remove("open");
@@ -829,7 +800,7 @@
           }
         });
 
-        // Close when clicking a project link
+        // Close Projects after clicking a project
         document
           .querySelectorAll(".projects-dropdown a")
           .forEach(function (link) {
@@ -841,21 +812,55 @@
           });
       }
 
-      // ==============================
       // CLOSE MOBILE MENU
-      // ==============================
 
       document.querySelectorAll(".nav-links > a").forEach(function (link) {
         link.addEventListener("click", function () {
           if (navLinks) {
             navLinks.classList.remove("open");
           }
+
+          if (menuBtn) {
+            menuBtn.classList.remove("active");
+
+            menuBtn.setAttribute("aria-expanded", "false");
+          }
         });
       });
 
-      // ==============================
+      // CLOSE MOBILE MENU
+      // WHEN CLICKING OUTSIDE NAVBAR
+
+      document.addEventListener("click", function (event) {
+        const nav = document.querySelector(".site-header");
+
+        if (!nav || !navLinks || !menuBtn) return;
+
+        // Only do this if mobile menu is open
+        if (!navLinks.classList.contains("open")) {
+          return;
+        }
+
+        // Click outside the entire navbar
+        if (!nav.contains(event.target)) {
+          navLinks.classList.remove("open");
+
+          menuBtn.classList.remove("active");
+
+          menuBtn.setAttribute("aria-expanded", "false");
+
+          // Also close Projects
+          if (projectsNav) {
+            projectsNav.classList.remove("open");
+          }
+
+          if (projectsToggle) {
+            projectsToggle.setAttribute("aria-expanded", "false");
+          }
+        }
+      });
+
       // SCROLL ANIMATIONS
-      // ==============================
 
       const observer = new IntersectionObserver(
         (entries) => {
